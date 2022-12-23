@@ -4057,7 +4057,6 @@ tbody.collapse.show {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
-    width: 100%;
   }
   .navbar-toggleable .navbar-toggler {
     display: none;
@@ -4119,7 +4118,6 @@ tbody.collapse.show {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
-    width: 100%;
   }
   .navbar-toggleable-sm .navbar-toggler {
     display: none;
@@ -4181,7 +4179,6 @@ tbody.collapse.show {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
-    width: 100%;
   }
   .navbar-toggleable-md .navbar-toggler {
     display: none;
@@ -4243,7 +4240,6 @@ tbody.collapse.show {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
-    width: 100%;
   }
   .navbar-toggleable-lg .navbar-toggler {
     display: none;
@@ -4307,7 +4303,6 @@ tbody.collapse.show {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  width: 100%;
 }
 
 .navbar-toggleable-xl .navbar-toggler {
