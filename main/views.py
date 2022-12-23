@@ -1,6 +1,8 @@
 from django.shortcuts import render,get_object_or_404
 from .models import *
 import datetime
+import markdown2
+
 # Create your views here.
 
 def index(request):
@@ -20,10 +22,16 @@ def blogs(request):
     }
     return render(request,'main/blog.html',context)
 
+def convert(f):
 
+        html= markdown2.markdown(f)
+        return html
 def page(request,pk):
     blogs = get_object_or_404(blog,id=pk)
+    des = blogs.long_decsription
+    des2 = convert(des)
     context = {
-        'blogs':blogs
+        'blogs':blogs,
+        'des':des2
     }
     return render(request,'main/page.html',context)
