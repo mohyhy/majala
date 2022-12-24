@@ -17,8 +17,12 @@ def index(request):
 
 def blogs(request):
     blogs = blog.objects.all()
+    date_now  = datetime.datetime.now()
+
     context={
         'blog':blogs,
+        'D_N':date_now
+
     }
     return render(request,'main/blog.html',context)
 
@@ -30,8 +34,13 @@ def page(request,pk):
     blogs = get_object_or_404(blog,id=pk)
     des = blogs.long_decsription
     des2 = convert(des)
+    date_now  = datetime.datetime.now()
+
+
     context = {
         'blogs':blogs,
-        'des':des2
+        'des':des2,
+        'D_N':date_now
+
     }
     return render(request,'main/page.html',context)
