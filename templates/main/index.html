@@ -75,8 +75,8 @@
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4" style="font-weight: bold;">الأخبار</div>
                 </div>
                 {% for n in news %}
-                {% if not n.most_popular and  not n.trending %}
-                <div class="row pb-4">
+                {% if  n.most_popular and   n.trending %}
+                <div class="row pb-4 more">
                     
                     <div class="col-md-5">
                         <div class="fh5co_hover_news_img">
@@ -94,6 +94,29 @@
                 </div>
                 {% endif %}
                 {% endfor %}
+                <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
+                    <div class="col-12 text-center pb-4 pt-4">
+                        <button href="#" class="btn_pagging">المزيد</button>
+                     </div>
+                     <script>
+        
+                        let loadMoreBtn = document.querySelector('.btn_pagging');
+                        let currentItem = 1;
+                        
+                        loadMoreBtn.onclick = () =>{
+                           let boxes = [...document.querySelectorAll('.more')];
+                           for (var i = currentItem; i < currentItem + 3; i++){
+                              boxes[i].style.display = 'flex';
+                           }
+                           currentItem += 3;
+                        
+                           if(currentItem >= boxes.length){
+                              loadMoreBtn.style.display = 'none';
+                           }
+                        }
+                        
+                        </script>
+                </div>
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
@@ -101,7 +124,7 @@
                 </div>
                 {% for ne in news  %}
                     {% if ne.most_popular %}
-                <div class="row pb-3">
+                <div class="row pb-3 ">
                     <div class="col-5 align-self-center">
                         <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
                     </div>
