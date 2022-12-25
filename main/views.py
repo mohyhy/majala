@@ -4,24 +4,32 @@ import datetime
 import markdown2
 
 # Create your views here.
+most = New.objects.filter(most_popular =True).order_by('-date_post')
+trend = New.objects.filter(trending =True).order_by('-date_post')
+
 
 def index(request):
-    news = New.objects.all()
+    news = New.objects.filter(type='News').order_by('-date_post')
     date_now  = datetime.datetime.now()
     context={
         'news':news,
-        'D_N':date_now
+        'most':most,
+        'trend':trend,
+        'D_N':date_now.date(),
     }
     return render(request,'main/index.html',context)
 
 
 def blogs(request):
-    blogs = blog.objects.all()
+    blogs = New.objects.filter(type='Blogs').order_by('-date_post')
+    
     date_now  = datetime.datetime.now()
 
     context={
         'blog':blogs,
-        'D_N':date_now
+        'most':most,
+        'trend':trend,
+        'D_N':date_now.date()
 
     }
     return render(request,'main/blog.html',context)

@@ -9,7 +9,7 @@
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4" style="font-weight: bold;" >مدونات ومقالات</div>
                 </div>
                 {% for bl in blog %}
-                {% if  bl.most_popular and  bl.trending %}
+                {% if not bl.most_popular and not  bl.trending %}
 
                 <div class="row pb-4 more">
                     <div class="col-md-5">
@@ -61,8 +61,8 @@
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4" style="font-weight: bold;">الأكثر انتشاراً</div>
                 </div>
-                {% for bm in blog %}
-                {% if  bm.most_popular  %}
+                {% for bm in most %}
+                
                 <div class="row pb-3">
                     <div class="col-5 align-self-center">
                         <img src="{{bm.image.url}}" alt="img" class="fh5co_most_trading"/>
@@ -72,7 +72,7 @@
                         <div class="most_fh5co_treding_font_123"> {{bm.date_post}}</div>
                     </div>
                 </div>
-                {% endif %}
+               
                 {% endfor %}
             </div>
         </div>
@@ -85,8 +85,8 @@
             <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4" style="font-weight: bold;">الأكثر شهرة</div>
         </div>
         <div class="owl-carousel owl-theme" style="direction: ltr;" id="slider2">
-            {% for bt in blog %}
-            {% if  bt.trending  %}
+            {% for bt in trend %}
+           
             <div class="item px-2">
                 <div class="fh5co_hover_news_img">
                     <div class="fh5co_news_img"><img src="{{bt.image.url}}" alt=""/></div>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
+            
             {% endfor %}
         </div>
     </div>
