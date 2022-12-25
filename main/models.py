@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class New(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     author = models.CharField(max_length=20,null=True, blank=True)
     image = models.ImageField()
     date_post = models.DateField(null=True, blank=True)
@@ -23,7 +23,7 @@ class New(models.Model):
 
 
 class blog(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     author = models.CharField(max_length=20,null=True, blank=True)
     image = models.ImageField()
     date_post = models.DateField(null=True, blank=True)
