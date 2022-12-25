@@ -11,7 +11,7 @@
                 {% for bl in blog %}
                 {% if  bl.most_popular and  bl.trending %}
 
-                <div class="row pb-4">
+                <div class="row pb-4 more">
                     <div class="col-md-5">
                         <a href="{% url 'main:page' bl.id %}">
                         <div class="fh5co_hover_news_img">
@@ -31,6 +31,29 @@
                 </div>
                 {% endif %}
                 {% endfor %}
+                <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
+                    <div class="col-12 text-center pb-4 pt-4">
+                        <button href="#" class="btn_pagging">المزيد</button>
+                     </div>
+                     <script>
+        
+                        let loadMoreBtn = document.querySelector('.btn_pagging');
+                        let currentItem = 1;
+                        
+                        loadMoreBtn.onclick = () =>{
+                           let boxes = [...document.querySelectorAll('.more')];
+                           for (var i = currentItem; i < currentItem + 3; i++){
+                              boxes[i].style.display = 'flex';
+                           }
+                           currentItem += 3;
+                        
+                           if(currentItem >= boxes.length){
+                              loadMoreBtn.style.display = 'none';
+                           }
+                        }
+                        
+                        </script>
+                </div>
                 
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
@@ -53,16 +76,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="row mx-0">
-            <div class="col-12 text-center pb-4 pt-4">
-                <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>
-                <a href="#" class="btn_pagging">1</a>
-                <a href="#" class="btn_pagging">2</a>
-                <a href="#" class="btn_pagging">3</a>
-                <a href="#" class="btn_pagging">...</a>
-                <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
-             </div>
-        </div>
+        
     </div>
 </div>
 <div class="container-fluid pb-4 pt-5">
