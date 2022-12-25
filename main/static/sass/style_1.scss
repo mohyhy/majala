@@ -46,14 +46,14 @@ a, a:hover {
 	color: #fff!important;
 }
 .treding_btn {
-	background: $yellow;
+	background: red;
 	color: #fff;
 	margin: 0 10px;
 	display: inline-block;
 	padding: 15px 40px;
 }
 .treding_btn:hover, .treding_btn:focus {
-	background: $yellow;
+	background: red;
 	color: #fff;
 	margin: 0 10px;
 	display: inline-block;
@@ -66,7 +66,7 @@ a, a:hover {
 	@include clip-path(polygon(0 1%, 100% 0, 0 100%, 0% 100%));
 	height: 20px;
 	width: 20px;
-	background: $yellow;
+	background: red;
 	position: absolute;
 }
 .fh5co_logo_width {
@@ -118,7 +118,7 @@ a, a:hover {
 	padding-right: 20px!important;
 	margin: 0 20px!important;
 	@include transition(0.5s);
-	background: $yellow!important;
+	background: $red!important;
 	@include clip-path(polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0));
 }
 .navbar-light .navbar-nav .nav-link {
@@ -133,7 +133,7 @@ a, a:hover {
 	@include clip-path(polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0));
 
 	&:focus, &:hover {
-		background: $yellow!important;
+		background: red !important;
 		color: #fff!important;
 		padding-top: 12px!important;
 		padding-bottom: 15px!important;
@@ -420,7 +420,7 @@ a, a:hover {
 	content: '';
 	height: 120%;
 	width: 120%;
-	background-color: $yellow;
+	background-color: red;
 	z-index: -1;
 	top: -10%;
 	right: -10%;
@@ -465,7 +465,7 @@ a, a:hover {
 	display: inline-block;
 }
 .fh5co_tagg:hover, .fh5co_tagg:focus {
-	background: $yellow;
+	background: red;
 	color: #fff;
 	text-decoration: none;
 }
@@ -597,7 +597,7 @@ a, a:hover {
 	color: #fff!important;
 }
 .fh5co_footer_subcribe {
-	background: $yellow!important;
+	background: red !important;
 	border-bottom: 2px solid #fff!important;
 	border-top: 0px solid #fff!important;
 	border-top: 0px solid #fff!important;
@@ -651,7 +651,7 @@ a, a:hover {
 	border: 1px solid #fff!important;
 	color: #fff!important;
 	font-size: 24px!important;
-	background: $yellow;
+	background: red;
 	padding: 10px 15px;
 	margin: 0 20px;
 }
@@ -749,7 +749,7 @@ a, a:hover {
 	letter-spacing: 1px!important;
 }
 .contact_btn {
-	background: $yellow!important;
+	background: red!important;
 	@include border-radius(0!important);
 	color: #fff!important;
 	padding: 10px 50px!important;

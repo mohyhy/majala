@@ -11,6 +11,9 @@ class New(models.Model):
     long_decsription = models.TextField(default='DESC')
     most_popular = models.BooleanField(default=False)
     trending = models.BooleanField(default=False)
+    main = models.BooleanField(default=False)
+    main2 = models.BooleanField(default=False)
+
 
 
     def __str__(self):
@@ -28,6 +31,11 @@ class blog(models.Model):
     long_decsription = models.TextField(default='DESC')
     most_popular = models.BooleanField(default=False)
     trending = models.BooleanField(default=False)
+    main = models.BooleanField(default=False)
+    main2 = models.BooleanField(default=False)
+
+
+
 
     
     def __str__(self):
