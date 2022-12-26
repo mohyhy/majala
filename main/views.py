@@ -66,11 +66,14 @@ def page(request,pk):
 
 def section(request,cate):
     news = New.objects.filter(cate=cate).order_by('-date_post')
+    date_now  = datetime.datetime.now()
+
 
     return render(request,'main/section.html',{
         'f':cate,
         'blog':news,
         'most':most,
+        'D_N':date_now.date(),
         'mostrend':trend[0]
 
 

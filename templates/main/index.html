@@ -9,7 +9,7 @@
                 <div class="fh5co_suceefh5co_height_position_absolute_font">
                     <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{main.date_post}}
                     </a></div>
-                    <div class=""><a href="single.html" class="fh5co_good_font" style="font-weight: bold;">{{main.title}}</a></div>
+                    <div class=""><a href="{% url 'main:page' main.id %}" class="fh5co_good_font" style="font-weight: bold;">{{main.title}}</a></div>
                 </div>
             </div>
         </div>
@@ -53,10 +53,11 @@
             {% if nt.trending  %}
             <div class="item px-2">
                 <div class="fh5co_hover_news_img">
+                    <a href="{% url 'main:page' nt.id %}" class="d-block fh5co_small_post_heading">
                     <div class="fh5co_news_img"><img src="{{nt.image.url}}" alt=""/></div>
                     <div>
-                        <a href="{% url 'main:page' nt.id %}" class="d-block fh5co_small_post_heading"><span class="">{{nt.title}}</span></a>
-                        <div class="c_g"><i class="fa fa-clock-o"></i> {{nt.date_post}}</div>
+                        <span class="">{{nt.title}}</span>
+                        <div class="c_g"><i class="fa fa-clock-o"></i> {{nt.date_post}}</div></a>
                     </div>
                 </div>
             </div>
@@ -80,18 +81,19 @@
                     
                     <div class="col-md-5">
                         <div class="fh5co_hover_news_img">
+                            <a href="{% url 'main:page' n.id %}">
                             <div class="fh5co_news_img"><img src="{{n.image.url}}" alt=""/></div>
-                            <div></div>
+                            <div></div></a>
                         </div>
                     </div>
                     <div class="col-md-7 animate-box">
-                        <a href="{% url 'main:page' n.id %}" class="fh5co_magna py-2"> {{n.title}}<br> </a> <a href="{% url 'main:page' n.id %}" class="fh5co_mini_time py-3"> {{n.author}} -
-                        {{n.date_post}} </a>
+                        <a href="{% url 'main:page' n.id %}" class="fh5co_magna py-2"> {{n.title}}<br> </a> <a href="{% url 'main:page' n.id %}" class="fh5co_mini_time py-3">
+                        {{n.date_post}} 
                         <div class="fh5co_consectetur"> {{n.short_decsription}}.
                         </div>
                     </div>
                     
-                </div>
+                </div></a>
                 {% endif %}
                 {% endfor %}
                 <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
@@ -129,8 +131,8 @@
                         <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
                     </div>
                     <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font">{{ne.title}}.</div>
-                        <div class="most_fh5co_treding_font_123"> {{ne.date_post}}</div>
+                        <a href="{% url 'main:page' ne.id %}" class="d-block fh5co_small_post_heading"><span class="">{{ne.title}}</span>
+                        <div class="most_fh5co_treding_font_123"> {{ne.short_decsription}}</div></a>
                     </div>
                 </div>
                 {% endif %}

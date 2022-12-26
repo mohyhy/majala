@@ -23,9 +23,9 @@
             
                     <div class="col-md-7 animate-box">
                         <a href="{% url 'main:page' bl.id %}" class="fh5co_magna py-2"> {{bl.title}}. <br> </a> <a href="{% url 'main:page' bl.id %}" class="fh5co_mini_time py-3"> {{bl.author}} -
-                        {{bl.date_post}} </a>
+                        {{bl.date_post}} 
                         <div class="fh5co_consectetur"> {{bl.short_decsription}}.
-                        </div>
+                        </div></a>
                     </div>
 
                 </div>
@@ -68,9 +68,9 @@
                         <img src="{{bm.image.url}}" alt="img" class="fh5co_most_trading"/>
                     </div>
                     <div class="col-7 paddding">
-                        <a href="{% url 'main:page' bm.id %}" class="d-block fh5co_small_post_heading"><span class="">{{bm.title}}</span></a>
+                        <a href="{% url 'main:page' bm.id %}" class="d-block fh5co_small_post_heading"><span class="">{{bm.title}}</span>
                         <div class="most_fh5co_treding_font_123"> {{bm.short_decsription}}</div>
-                    </div>
+                    </div></a>
                 </div>
                
                 {% endfor %}
@@ -88,12 +88,13 @@
             {% for bt in trend %}
            
             <div class="item px-2">
+                <a href="{% url 'main:page' bt.id %}" class="d-block fh5co_small_post_heading">
                 <div class="fh5co_hover_news_img">
                     <div class="fh5co_news_img"><img src="{{bt.image.url}}" alt=""/></div>
                     <div>
-                        <a href="{% url 'main:page' bt.id %}" class="d-block fh5co_small_post_heading"><span class="">{{bt.title}}</span></a>
+                        <span class="">{{bt.title}}</span>
                         <div class="c_g"><i class="fa fa-clock-o"></i> {{bt.date_post}}</div>
-                    </div>
+                    </div></a>
                 </div>
             </div>
             
