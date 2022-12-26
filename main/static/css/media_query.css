@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* CSS Document */
-@media(min-width:320px) and (max-width:480px) {
+@media (max-width:480px) {
 .padding_786 {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
@@ -35,7 +35,6 @@
 	padding-top: 10px;
 }
 .mobile_logo_width {
-	width: 100px;
 	display: block!important;
 	margin-left: 20px;
 	padding-bottom: 10px;
@@ -100,7 +99,6 @@
 	color: #fff;
 	z-index: 7;
 	top: 60%;
-	left: 5%;
 	padding: 0 10px;
 }
 .fh5co_footer_bg {
@@ -169,7 +167,6 @@
 		display: none;
 	}
 .mobile_logo_width {
-	width: 100px;
 	display: block!important;
 	margin-left: 20px;
 	padding-bottom: 10px;
@@ -181,6 +178,7 @@
 .navbar-light .navbar-nav .nav-link {
 	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)!important;
 	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)!important;
+}
 }
 
 @media(min-width:768px) and (max-width:1024px) {
@@ -194,7 +192,6 @@
 	padding-top: 20px;
 }
 .mobile_logo_width {
-	width: 100px;
 	display: block!important;
 	margin-left: 20px;
 	padding-bottom: 10px;
@@ -223,15 +220,14 @@
 	
 }
 
-@media(min-width:1025px) and (max-width:1170px) {
-}
 
-@media(min-width:991px) and (max-width:1024px) {
+
+@media(min-width:1024px) and (max-width:1170px) {
 .mobile_logo_width {
-	display: none;
+	display: block;
 }
 .fh5co_logo_width {
-	display: block;
+	display: none;
 }
 .fh5co_good_font {
 	font-size: 20px;
@@ -240,5 +236,4 @@
 	font-size: 14px;
 }
 
-}
 }

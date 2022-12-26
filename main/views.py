@@ -6,20 +6,21 @@ import markdown2
 # Create your views here.
 most = New.objects.filter(most_popular =True).order_by('-date_post')
 trend = New.objects.filter(trending =True).order_by('-date_post')
-print(trend[0])
 
 
 def index(request):
     news = New.objects.filter(type='News').order_by('-date_post')
     date_now  = datetime.datetime.now()
-    print(news)
+    main = New.objects.get(main=True)
+    print(main)
 
     context={
         'news':news,
         'most':most,
         'trend':trend,
         'D_N':date_now.date(),
-        'mostrend':trend[0]
+        'mostrend':trend[0],
+        'main':main
     }
     return render(request,'main/index.html',context)
 
