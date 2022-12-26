@@ -55,7 +55,9 @@ def page(request,pk):
     context = {
         'blogs':blogs,
         'des':des2,
-        'D_N':date_now,
+        'D_N':date_now.date(),
+        'most':most,
+        'trend':trend,
         'mostrend':trend[0]
 
 

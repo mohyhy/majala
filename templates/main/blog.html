@@ -68,8 +68,8 @@
                         <img src="{{bm.image.url}}" alt="img" class="fh5co_most_trading"/>
                     </div>
                     <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> {{bm.author}}.</div>
-                        <div class="most_fh5co_treding_font_123"> {{bm.date_post}}</div>
+                        <a href="{% url 'main:page' bm.id %}" class="d-block fh5co_small_post_heading"><span class="">{{bm.title}}</span></a>
+                        <div class="most_fh5co_treding_font_123"> {{bm.short_decsription}}</div>
                     </div>
                 </div>
                
