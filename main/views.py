@@ -11,6 +11,8 @@ trend = New.objects.filter(trending =True).order_by('-date_post')
 def index(request):
     news = New.objects.filter(type='News').order_by('-date_post')
     date_now  = datetime.datetime.now()
+    print(news)
+
     context={
         'news':news,
         'most':most,
@@ -39,7 +41,7 @@ def convert(f):
         html= markdown2.markdown(f)
         return html
 def page(request,pk):
-    blogs = get_object_or_404(blog,id=pk)
+    blogs = get_object_or_404(New,id=pk)
     des = blogs.long_decsription
     des2 = convert(des)
     date_now  = datetime.datetime.now()
@@ -52,3 +54,14 @@ def page(request,pk):
 
     }
     return render(request,'main/page.html',context)
+
+def section(request,cate):
+    news = New.objects.filter(cate=cate).order_by('-date_post')
+
+    return render(request,'main/section.html',{
+        'f':cate,
+        'blog':news,
+        'most':most,
+
+    })
+

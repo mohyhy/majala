@@ -4,7 +4,11 @@ a,a:hover{color:#f50404}.fh5co_header_bg{background:#222;color:#fff}.color_fff{c
     display: none;
 }
 .more:nth-child(1),
-.more:nth-child(2)
+.more:nth-child(2),
+.more:nth-child(3),
+.more:nth-child(4),
+.more:nth-child(5)
+
 {
     display: flex;
 }

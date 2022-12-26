@@ -7,6 +7,13 @@ class New(models.Model):
         ('News','News'),
         ('Blogs','Blogs'),
     ]
+    choices= [
+        ('ثقافة','ثقافة'),
+        ('اقتصاد','اقتصاد'),
+        ('رياضة','رياضة'),
+        ('صحةوجمال','صحةوجمال'),
+        ('تكنولوجيا','تكنولوجيا'),
+    ]
      
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=20,null=True, blank=True)
@@ -19,6 +26,8 @@ class New(models.Model):
     trending = models.BooleanField(default=False)
     main = models.BooleanField(default=False)
     main2 = models.BooleanField(default=False)
+    cate = models.CharField(choices=choices,max_length=12)
+
 
 
 
