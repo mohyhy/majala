@@ -12,7 +12,6 @@ def index(request):
     news = New.objects.filter(type='News').order_by('-date_post')
     date_now  = datetime.datetime.now()
     main = New.objects.get(main=True)
-    print(main)
 
     context={
         'news':news,
