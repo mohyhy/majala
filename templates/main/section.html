@@ -61,17 +61,14 @@
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4" style="font-weight: bold;">الأكثر انتشاراً</div>
                 </div>
                 {% for ne in most  %}
-                    {% if ne.most_popular %}
                 <div class="row pb-3 ">
                     <div class="col-5 align-self-center">
                         <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
                     </div>
                     <div class="col-7 paddding">
                         <a href="{% url 'main:page' ne.id %}" class="d-block fh5co_small_post_heading"><span class="">{{ne.title}}</span>
-                        <div class="most_fh5co_treding_font_123"> {{ne.short_decsription}}</div>
                     </div></a>
                 </div>
-                {% endif %}
                 {% endfor %}
                 
             </div>
