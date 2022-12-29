@@ -62,9 +62,10 @@
                 </div>
                 {% for ne in most  %}
                 <div class="row pb-3 ">
+                   
                     <div class="col-5 align-self-center">
-                        <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
-                    </div>
+                        <a href="{% url 'main:page' ne.id %}"> <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
+                    </div></a>
                     <div class="col-7 paddding">
                         <a href="{% url 'main:page' ne.id %}" class="d-block fh5co_small_post_heading"><span class="">{{ne.title}}</span>
                     </div></a>

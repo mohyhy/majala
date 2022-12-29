@@ -9,7 +9,7 @@
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4" style="font-weight: bold;" >مدونات ومقالات</div>
                 </div>
                 {% for bl in blog %}
-                {% if    bl.most_popular and  not bl.trending %}
+                {% if   not bl.most_popular and  not bl.trending %}
 
                 <div class="row pb-4 more">
                     <div class="col-md-5">
@@ -22,10 +22,10 @@
                     </div>
             
                     <div class="col-md-7 animate-box">
-                        <a href="{% url 'main:page' bl.id %}" class="fh5co_magna py-2"> {{bl.title}}. <br> </a> <a href="{% url 'main:page' bl.id %}" class="fh5co_mini_time py-3"> {{bl.author}} -
-                        {{bl.date_post}} </a>
+                        <a href="{% url 'main:page' bl.id %}" class="fh5co_magna py-2"> {{bl.title}}. <br> </a> <a href="{% url 'main:page' bl.id %}" class="fh5co_mini_time py-3">
+                        {{bl.date_post}} 
                         <div class="fh5co_consectetur"> {{bl.short_decsription}}.
-                        </div>
+                        </div></a>
                     </div>
 
                 </div>
@@ -57,23 +57,22 @@
                 
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-                
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4" style="font-weight: bold;">الأكثر انتشاراً</div>
                 </div>
-                {% for bm in blog %}
-                {% if  bm.most_popular  %}
-                <div class="row pb-3">
+                {% for ne in most  %}
+                    {% if ne.most_popular %}
+                <div class="row pb-3 ">
                     <div class="col-5 align-self-center">
-                        <img src="{{bm.image.url}}" alt="img" class="fh5co_most_trading"/>
-                    </div>
+                        <a href="{% url 'main:page' ne.id %}">  <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
+                    </div></a>
                     <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> {{bm.author}}.</div>
-                        <div class="most_fh5co_treding_font_123"> {{bm.date_post}}</div>
-                    </div>
+                        <a href="{% url 'main:page' ne.id %}" class="d-block fh5co_small_post_heading"><span class="">{{ne.title}}</span>
+                    </div></a>
                 </div>
                 {% endif %}
                 {% endfor %}
+                
             </div>
         </div>
         

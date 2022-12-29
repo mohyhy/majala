@@ -76,7 +76,7 @@
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4" style="font-weight: bold;">الأخبار</div>
                 </div>
                 {% for n in news %}
-                {% if not n.most_popular and not  n.trending %}
+                {% if not n.most_popular and not n.trending  %}
                 <div class="row pb-4 more">
                     
                     <div class="col-md-5">
@@ -129,8 +129,8 @@
                     {% if ne.most_popular %}
                 <div class="row pb-3 ">
                     <div class="col-5 align-self-center">
-                        <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
-                    </div>
+                        <a href="{% url 'main:page' ne.id %}">  <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
+                    </div></a>
                     <div class="col-7 paddding">
                         <a href="{% url 'main:page' ne.id %}" class="d-block fh5co_small_post_heading"><span class="">{{ne.title}}</span>
                        </a>
