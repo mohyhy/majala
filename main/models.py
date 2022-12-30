@@ -15,7 +15,7 @@ class New(models.Model):
         ('تكنولوجيا','تكنولوجيا'),
     ]
      
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100,unique=True)
     author = models.CharField(max_length=20,null=True, blank=True)
     image = models.ImageField()
     date_post = models.DateField(null=True, blank=True)

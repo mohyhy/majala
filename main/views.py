@@ -44,8 +44,8 @@ def convert(f):
 
         html= markdown2.markdown(f)
         return html
-def page(request,pk):
-    blogs = get_object_or_404(New,id=pk)
+def page(request,title):
+    blogs = get_object_or_404(New,title=title)
     des = blogs.long_decsription
     des2 = convert(des)
     date_now  = datetime.datetime.now()
