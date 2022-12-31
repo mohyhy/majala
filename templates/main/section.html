@@ -33,25 +33,35 @@
                 {% endfor %}
                 <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
                     <div class="col-12 text-center pb-4 pt-4">
-                        <button href="#" class="btn_pagging">المزيد</button>
+                        <button href="#" class="btn_pagging">اعرض المزيد</button>
                      </div>
                      <script>
-        
-                        let loadMoreBtn = document.querySelector('.btn_pagging');
-                        let currentItem = 1;
-                        
-                        loadMoreBtn.onclick = () =>{
-                           let boxes = [...document.querySelectorAll('.more')];
-                           for (var i = currentItem; i < currentItem + 3; i++){
+                           let boxes = [...document.getElementsByClassName('more')];
+                        let currentItem = 3;
+                        $(".btn_pagging").click(function(){
+                         var $this = $(this).text("").html('<i class="fa fa-spinner fa-spin"></i>');
+                         window.setTimeout(function(){
+                         let loadMoreBtn = document.querySelector('.btn_pagging');             
+                        for (var i = currentItem; i < currentItem + 1; i++){
+                            if (i >= boxes.length) { break; }
+
                               boxes[i].style.display = 'flex';
-                           }
-                           currentItem += 3;
-                        
-                           if(currentItem >= boxes.length){
-                              loadMoreBtn.style.display = 'none';
-                           }
                         }
+                        currentItem += 3;
                         
+                        if(currentItem >= boxes.length){
+                              loadMoreBtn.style.display = 'none';
+                        }
+                        console.log(currentItem)
+                        console.log(boxes.length)
+                        console.log(boxes)
+                         $this.html('').text("اعرض المزيد");
+                        },2000);
+                         
+                        
+                        });
+        
+       
                         </script>
                 </div>
                 
