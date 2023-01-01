@@ -2,14 +2,14 @@ from django.shortcuts import render,get_object_or_404
 from .models import *
 import datetime
 import markdown2
-
+import random
 # Create your views here.
-most = New.objects.filter(most_popular =True).order_by('-date_post')
-trend = New.objects.filter(trending =True).order_by('-date_post')
 
 
 def index(request):
     news = New.objects.filter(type='News').order_by('-date_post')
+    most = New.objects.filter(most_popular =True).order_by('-date_post')
+    trend = New.objects.filter(trending =True).order_by('-date_post')
     date_now  = datetime.datetime.now()
     main = New.objects.get(main=True)
 
@@ -18,7 +18,7 @@ def index(request):
         'most':most,
         'trend':trend,
         'D_N':date_now.date(),
-        'mostrend':trend[0],
+        'mostrend':random.choice(trend),
         'main':main
     }
     return render(request,'main/index.html',context)
@@ -26,7 +26,8 @@ def index(request):
 
 def blogs(request):
     blogs = New.objects.filter(type='Blogs').order_by('-date_post')
-    
+    most = New.objects.filter(most_popular =True).order_by('-date_post')
+    trend = New.objects.filter(trending =True).order_by('-date_post')
     date_now  = datetime.datetime.now()
 
     context={
@@ -34,7 +35,7 @@ def blogs(request):
         'most':most,
         'trend':trend,
         'D_N':date_now.date(),
-        'mostrend':trend[0]
+        'mostrend':random.choice(trend)
 
 
     }
@@ -46,6 +47,8 @@ def convert(f):
         return html
 def page(request,title):
     blogs = get_object_or_404(New,title=title)
+    most = New.objects.filter(most_popular =True).order_by('-date_post')
+    trend = New.objects.filter(trending =True).order_by('-date_post')
     des = blogs.long_decsription
     des2 = convert(des)
     date_now  = datetime.datetime.now()
@@ -57,7 +60,7 @@ def page(request,title):
         'D_N':date_now.date(),
         'most':most,
         'trend':trend,
-        'mostrend':trend[0]
+        'mostrend':random.choice(trend)
 
 
     }
@@ -65,6 +68,8 @@ def page(request,title):
 
 def section(request,cate):
     news = New.objects.filter(cate=cate).order_by('-date_post')
+    most = New.objects.filter(most_popular =True).order_by('-date_post')
+    trend = New.objects.filter(trending =True).order_by('-date_post')
     date_now  = datetime.datetime.now()
 
 
@@ -73,7 +78,7 @@ def section(request,cate):
         'blog':news,
         'most':most,
         'D_N':date_now.date(),
-        'mostrend':trend[0]
+        'mostrend':random.choice(trend)
 
 
     })
