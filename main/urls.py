@@ -6,7 +6,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('blog/', views.blogs, name='blog'),
     path('page/<str:title>/', views.page, name='page'),
-    path('section/<str:cate>/',views.section,name='section')
+    path('section/<str:cate>/',views.section,name='section'),
+    path('e/privacy',views.privacy,name="privacy")
 
 
 ]

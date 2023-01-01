@@ -49,6 +49,7 @@ def page(request,title):
     blogs = get_object_or_404(New,title=title)
     most = New.objects.filter(most_popular =True).order_by('-date_post')
     trend = New.objects.filter(trending =True).order_by('-date_post')
+    print(trend)
     des = blogs.long_decsription
     des2 = convert(des)
     date_now  = datetime.datetime.now()
@@ -83,3 +84,17 @@ def section(request,cate):
 
     })
 
+def privacy(request):
+
+    most = New.objects.filter(most_popular =True).order_by('-date_post')
+    trend = New.objects.filter(trending =True).order_by('-date_post')
+    date_now  = datetime.datetime.now()
+
+    return render(request,'main/privacy.html',{
+        'mostrend':random.choice(trend),
+        'most':most,
+        'D_N':date_now.date()
+
+
+
+    })
