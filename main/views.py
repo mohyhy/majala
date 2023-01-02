@@ -98,3 +98,19 @@ def privacy(request):
 
 
     })
+    
+    
+def about(request):
+
+    most = New.objects.filter(most_popular =True).order_by('-date_post')
+    trend = New.objects.filter(trending =True).order_by('-date_post')
+    date_now  = datetime.datetime.now()
+
+    return render(request,'main/about.html',{
+        'mostrend':random.choice(trend),
+        'most':most,
+        'D_N':date_now.date()
+
+
+
+    })        
