@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid paddding mb-5">
-    <div class="row mx-0" style="border: white solid 8px; ">
+    <div class="row mx-0">
         <div class="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn">
-            <div class="fh5co_suceefh5co_height"><img src="{{main.image.url}}" alt="{{main.title}}"/>
+            <div class="fh5co_suceefh5co_height"><img src="{{main.image.url}}" alt="img"/>
                 <div class="fh5co_suceefh5co_height_position_absolute"></div>
                 <div class="fh5co_suceefh5co_height_position_absolute_font">
                     <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{main.date_post}}
@@ -18,9 +18,9 @@
 
             {% for nt in news %}
             {% if nt.main2  %}
-                <div class="col-md-6 col-6 paddding animate-box" style="border-top: white solid 5px;border: white solid 5px;" data-animate-effect="fadeIn">
+                <div class="col-md-6 col-6 paddding animate-box"data-animate-effect="fadeIn">
                     
-                    <div class="fh5co_suceefh5co_height_2"><img src="{{nt.image.url}}" alt="{{nt.title}}"/>
+                    <div class="fh5co_suceefh5co_height_2"><img src="{{nt.image.url}}" alt="img"/>
                         <div class="fh5co_suceefh5co_height_position_absolute"></div>
                         <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                             <div class=""><a href="{% url 'main:page' nt.title %}" class="fh5co_good_font_2"> {{nt.short_decsription}} </a></div>
@@ -46,7 +46,7 @@
 <div class="container-fluid pb-4 pt-5">
     <div class="container animate-box">
         <div>
-            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4" style="font-weight: bold;">المواضيع الرائجة</div>
+            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4" style="font-weight: bold;">رائج الان</div>
         </div>
         <div class="owl-carousel owl-theme" style="direction: ltr;" id="slider2">
             {% for nt in trend %}
@@ -54,7 +54,7 @@
             <div class="item px-2">
                 <div class="fh5co_hover_news_img">
                     <a href="{% url 'main:page' nt.title %}" class="d-block fh5co_small_post_heading">
-                    <div class="fh5co_news_img"><img src="{{nt.image.url}}" alt="{{nt.title}}"/></div>
+                    <div class="fh5co_news_img"><img src="{{nt.image.url}}" alt=""/></div>
                     <div>
                         <span class="">{{nt.title}}</span>
                         <div class="c_g"><i class="fa fa-clock-o"></i> {{nt.date_post}}</div></a>
@@ -82,7 +82,7 @@
                     <div class="col-md-5">
                         <div class="fh5co_hover_news_img">
                             <a href="{% url 'main:page' n.id %}">
-                            <div class="fh5co_news_img"><img src="{{n.image.url}}" alt="{{n.title}}"/></div>
+                            <div class="fh5co_news_img"><img src="{{n.image.url}}" alt=""/></div>
                             <div></div></a>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                     {% if ne.most_popular %}
                 <div class="row pb-3 ">
                     <div class="col-5 align-self-center">
-                        <a href="{% url 'main:page' ne.title %}">  <img src="{{ne.image.url}}" alt="{{ne.title}}" class="fh5co_most_trading"/>
+                        <a href="{% url 'main:page' ne.title %}">  <img src="{{ne.image.url}}" alt="img" class="fh5co_most_trading"/>
                     </div></a>
                     <div class="col-7 paddding">
                         <a href="{% url 'main:page' ne.title %}" class="d-block fh5co_small_post_heading"><span class="">{{ne.title}}</span>
