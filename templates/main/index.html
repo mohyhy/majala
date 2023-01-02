@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid paddding mb-5">
-    <div class="row mx-0">
+    <div class="row mx-0" style="border: white solid 8px; ">
         <div class="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn">
             <div class="fh5co_suceefh5co_height"><img src="{{main.image.url}}" alt="img"/>
                 <div class="fh5co_suceefh5co_height_position_absolute"></div>
@@ -18,7 +18,7 @@
 
             {% for nt in news %}
             {% if nt.main2  %}
-                <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
+                <div class="col-md-6 col-6 paddding animate-box" style="border-top: white solid 5px;border: white solid 5px; data-animate-effect="fadeIn">
                     
                     <div class="fh5co_suceefh5co_height_2"><img src="{{nt.image.url}}" alt="img"/>
                         <div class="fh5co_suceefh5co_height_position_absolute"></div>
