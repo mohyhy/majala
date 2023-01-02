@@ -8,11 +8,11 @@ class New(models.Model):
         ('Blogs','Blogs'),
     ]
     choices= [
-        ('ثقافة','ثقافة'),
         ('اقتصاد','اقتصاد'),
         ('رياضة','رياضة'),
         ('صحةوجمال','صحةوجمال'),
         ('تكنولوجيا','تكنولوجيا'),
+        ('خبر','خبر')
     ]
      
     title = models.CharField(max_length=100,unique=True)
