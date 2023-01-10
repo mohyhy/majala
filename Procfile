@@ -1,1 +1,1 @@
-web: gunicorn majala.wsgi --log-file -
+web: gunicorn 'majala.wsgi'
