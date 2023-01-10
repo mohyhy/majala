@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-wwq&t!aa(2xp&3j-*r%(^bj$*cbq!s#2ki!o6gpqr(k^3rvbkh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 # '192.168.4.103'
 
 
@@ -122,6 +122,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 STATIC_ROOT= os.path.join(BASE_DIR,'static/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'majala/static/'),
+]
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
