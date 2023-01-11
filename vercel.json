@@ -1,9 +1,4 @@
 {
- "bulids" : [{
-  "src" : "majala/wsgi.py",
-  "use" : "@vercel/python",
-  "config" : { "maxLambdaSize" : "15mb" , "runtime" : "python 3.10.5" }
- }],
  "routes" : [{
     "src" : "/(.*)",
     "dest" : "majala.wsgi.py"
