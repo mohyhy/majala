@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from django.conf.urls.static import static
+from main.sitemaps import StaticSitemap
+from main import views as new_views
 
+from main.sitemaps import  StaticSitemap
+from django.contrib.sitemaps.views import sitemap
+
+
+sitemaps = {
+ 'pages': StaticSitemap,
+}
 
 
 urlpatterns = [
@@ -25,6 +35,13 @@ urlpatterns = [
     path('', include('main.urls',namespace='main'))
 
 ]
+urlpatterns += [
+   path('sitemap.xml', sitemap, {'sitemaps': sitemaps})
+]
+
+
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
